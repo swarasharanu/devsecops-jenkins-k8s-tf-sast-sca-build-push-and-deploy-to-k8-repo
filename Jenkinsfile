@@ -13,7 +13,7 @@ pipeline {
     }
     stage('CompileandRunSonarAnalysis') {
             steps {	
-		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=devsecopsswar -Dsonar.organization=devsecopsswar -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=61ec74f2165fd503daeee5208d0b713e0a808520'
+		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=devsecopscheck -Dsonar.organization=devsecopscheck -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=70ad50b5b375219a59cc484b28931345721ca8c7'
 			}
     }
 	stage('OWASP FS SCAN') {
