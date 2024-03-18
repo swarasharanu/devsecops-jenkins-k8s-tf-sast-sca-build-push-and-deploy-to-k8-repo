@@ -34,7 +34,7 @@ pipeline {
             steps { 
                withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
                  script{
-                 app =  docker.build("devsecops")
+                 app =  docker.build("opssec")
                  }
                }
             }
