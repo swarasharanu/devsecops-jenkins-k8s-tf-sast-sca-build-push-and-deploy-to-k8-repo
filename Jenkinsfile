@@ -29,6 +29,11 @@ pipeline {
 				}
 			}
     }
+	stage('TRIVY FS SCAN') {
+            steps {
+                sh "trivy fs . > trivyfs.txt"
+            }
+        }
 
 	stage('Build') { 
             steps { 
@@ -39,6 +44,11 @@ pipeline {
                }
             }
     }
+	stage("TRIVY"){
+            steps{
+                sh "trivy image 267767410086.dkr.ecr.us-east-1.amazonaws.com/opssec > trivyimage.txt" 
+            }
+        }
 
 	stage('Push') {
             steps {
